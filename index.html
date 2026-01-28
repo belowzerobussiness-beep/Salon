@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="site-title">LUMINA</title>
+    
     <link id="dynamic-favicon" rel="icon" type="image/png" href="">
+    
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .serif { font-family: 'Playfair Display', serif; }
@@ -109,13 +113,13 @@
     </div>
 
     <script>
+        // Contact Page Functions
         function showContactPage() { document.getElementById('contact-page').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
         function closeContactPage() { document.getElementById('contact-page').classList.add('hidden'); document.body.style.overflow = 'auto'; }
 
+        // Data Fetching
         fetch('./data.json').then(res => res.json()).then(data => {
-            // Browser Tab Logo (Favicon)
             if(data.favicon_url) { document.getElementById('dynamic-favicon').href = data.favicon_url; }
-            
             document.getElementById('site-title').innerText = data.brand_name;
             document.getElementById('hero-brand').innerText = data.brand_name;
             document.getElementById('f-brand').innerText = data.brand_name;
@@ -127,20 +131,16 @@
             document.getElementById('f-sat').innerText = data.hours.sat;
             document.getElementById('f-sun').innerText = data.hours.sun;
             document.getElementById('f-copy').innerText = data.copyright;
-            
             document.getElementById('nav-wa').href = `https://wa.me/${data.whatsapp_number}`;
             document.getElementById('f-insta').href = data.socials.instagram;
             document.getElementById('f-pin').href = data.socials.pinterest;
             document.getElementById('f-fb').href = data.socials.facebook;
-
-            // Contact Details
             document.getElementById('c-email').innerText = data.email_address;
             document.getElementById('c-email').href = "mailto:" + data.email_address;
             document.getElementById('c-wa').innerText = "+" + data.whatsapp_number;
             document.getElementById('c-wa').href = "https://wa.me/" + data.whatsapp_number;
             document.getElementById('c-loc').innerText = data.location.line1 + ", " + data.location.line2;
 
-            // Load Services
             const grid = document.getElementById('services-list');
             data.services.forEach(s => {
                 grid.innerHTML += `
@@ -157,6 +157,17 @@
                     </div>`;
             });
         });
+
+        // Netlify Identity Login Logic
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
     </script>
 </body>
 </html>
