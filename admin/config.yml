@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
-  branch: main # Agar aapki branch ka naam 'master' hai toh yahan master likhen
+  branch: main
 
-media_folder: "images" # Aapki images is folder mein jayengi
+media_folder: "images"
 public_folder: "/images"
 
 collections:
@@ -13,6 +13,7 @@ collections:
         label: "Main Settings"
         name: "settings"
         fields:
+          - { label: "Site Favicon (Browser Tab Logo)", name: "favicon_url", widget: "image" }
           - { label: "Brand Name", name: "brand_name", widget: "string" }
           - { label: "Support Gmail", name: "email_address", widget: "string" }
           - { label: "WhatsApp Number", name: "whatsapp_number", widget: "string" }
