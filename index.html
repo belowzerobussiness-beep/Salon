@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="site-title">LUMINA | Artistry In Motion</title>
+    <title id="site-title">LUMINA</title>
+    <link id="dynamic-favicon" rel="icon" type="image/png" href="">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -23,7 +25,7 @@
             <a href="#services" class="hover:text-black transition">Services</a>
             <button onclick="showContactPage()" class="hover:text-black transition uppercase">Contact</button>
         </div>
-        <a id="nav-wa" href="#" target="_blank" class="bg-stone-900 text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-stone-800 transition">Book Now</a>
+        <a id="nav-wa" href="#" target="_blank" class="bg-stone-900 text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Book Now</a>
     </nav>
 
     <section id="home" class="relative h-[90vh] flex items-center justify-center overflow-hidden bg-stone-900 mt-16">
@@ -31,12 +33,12 @@
         <div class="relative z-10 text-center max-w-4xl px-6 animate-fade-in">
             <span class="text-[10px] uppercase tracking-[0.4em] text-stone-300 mb-6 block font-bold">Premium Care • Elite Results</span>
             <h1 id="hero-brand" class="text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] text-white serif uppercase tracking-tighter"></h1>
-            <p class="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl mx-auto leading-relaxed font-light">Experience world-class beauty treatments and precision styling.</p>
+            <p class="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl mx-auto leading-relaxed font-light italic">Where artistry meets mindfulness.</p>
             <a href="#services" class="bg-white text-stone-900 px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-stone-100 transition">Explore Services</a>
         </div>
     </section>
 
-    <section id="services" class="py-32 bg-white">
+    <section id="services" class="py-32 bg-white text-stone-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center md:text-left mb-20">
                 <h2 class="text-5xl md:text-7xl serif mb-6">The Lookbook</h2>
@@ -48,10 +50,9 @@
 
     <section class="py-32 bg-[#FAF9F6] text-center border-t border-stone-100">
         <div class="max-w-3xl mx-auto px-6">
-            <span class="text-[10px] uppercase tracking-[0.4em] text-stone-500 mb-4 block font-bold">Reach Out</span>
             <h2 class="serif text-5xl mb-8">Get in Touch</h2>
-            <p class="text-stone-500 mb-12 text-sm tracking-wide leading-loose">Have a question or want to book a special session? Our team is here to help you experience beauty like never before.</p>
-            <button onclick="showContactPage()" class="bg-black text-white px-16 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-stone-800 transition shadow-2xl transform hover:scale-105">
+            <p class="text-stone-500 mb-12 text-sm tracking-wide">Ready to transform? Our team is just a message away.</p>
+            <button onclick="showContactPage()" class="bg-black text-white px-16 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-stone-800 transition shadow-2xl">
                 Open Contact Details
             </button>
         </div>
@@ -61,7 +62,7 @@
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16 border-b border-stone-800 pb-20">
             <div>
                 <h2 id="f-brand" class="serif text-3xl mb-6"></h2>
-                <p id="f-tagline" class="text-stone-500 text-sm leading-relaxed italic"></p>
+                <p id="f-tagline" class="text-stone-500 text-sm italic"></p>
             </div>
             <div>
                 <h4 class="text-[10px] uppercase tracking-widest text-stone-500 mb-8 font-bold">Location</h4>
@@ -70,76 +71,55 @@
             </div>
             <div>
                 <h4 class="text-[10px] uppercase tracking-widest text-stone-500 mb-8 font-bold">Hours</h4>
-                <ul class="text-stone-300 text-sm space-y-2">
-                    <li class="flex justify-between border-b border-stone-900 pb-2"><span>Mon — Fri</span> <span id="f-monfri"></span></li>
-                    <li class="flex justify-between border-b border-stone-900 pb-2"><span>Sat</span> <span id="f-sat"></span></li>
-                    <li class="flex justify-between"><span>Sunday</span> <span id="f-sun"></span></li>
-                </ul>
+                <div class="text-stone-300 text-sm space-y-2">
+                    <p>Mon-Fri: <span id="f-monfri"></span></p>
+                    <p>Sat: <span id="f-sat"></span></p>
+                    <p>Sun: <span id="f-sun"></span></p>
+                </div>
             </div>
             <div>
                 <h4 class="text-[10px] uppercase tracking-widest text-stone-500 mb-8 font-bold">Social</h4>
-                <div class="flex flex-col space-y-2 text-sm">
-                    <a id="f-insta" href="#" class="text-stone-300 hover:text-white transition italic serif">Instagram</a>
-                    <a id="f-pin" href="#" class="text-stone-300 hover:text-white transition italic serif">Pinterest</a>
-                    <a id="f-fb" href="#" class="text-stone-300 hover:text-white transition italic serif">Facebook</a>
+                <div class="flex flex-col space-y-2 text-sm italic serif">
+                    <a id="f-insta" href="#">Instagram</a>
+                    <a id="f-pin" href="#">Pinterest</a>
+                    <a id="f-fb" href="#">Facebook</a>
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 pt-12 text-[10px] uppercase text-stone-600">
-            <p id="f-copy"></p>
-        </div>
+        <p id="f-copy" class="text-[10px] uppercase tracking-widest text-stone-600 mt-12 text-center"></p>
     </footer>
 
-    <div id="contact-page" class="fixed inset-0 z-[200] bg-white hidden overflow-y-auto animate-fade-in">
-        <button onclick="closeContactPage()" class="absolute top-10 right-10 text-[10px] font-bold uppercase tracking-widest border-b-2 border-black pb-1 hover:opacity-50 transition">&times; Close Page</button>
-        
-        <div class="flex flex-col items-center justify-center min-h-screen px-6 py-20">
-            <span class="text-[10px] uppercase tracking-[0.5em] text-stone-400 mb-6 font-bold">Direct Communication</span>
-            <h2 class="serif text-5xl md:text-7xl mb-16 italic">Contact <span class="text-stone-300">Us</span></h2>
-            
-            <div class="black-box text-white p-12 md:p-24 w-full max-w-2xl text-center shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-stone-900 rounded-full blur-[80px] opacity-30 translate-x-1/2 -translate-y-1/2"></div>
-                
-                <div class="relative z-10 space-y-20">
-                    <div>
-                        <p class="text-stone-500 text-[10px] uppercase tracking-[0.4em] mb-6 font-bold">Email Address</p>
-                        <a id="c-email" href="" class="text-2xl md:text-4xl font-light hover:text-stone-400 transition-colors italic serif"></a>
-                    </div>
-                    
-                    <div class="w-16 h-px bg-stone-800 mx-auto"></div>
-                    
-                    <div>
-                        <p class="text-stone-500 text-[10px] uppercase tracking-[0.4em] mb-6 font-bold">WhatsApp Hotline</p>
-                        <a id="c-wa" href="" target="_blank" class="text-2xl md:text-4xl font-light hover:text-stone-400 transition-colors italic serif"></a>
-                    </div>
-
-                    <div class="pt-10">
-                        <p id="c-loc" class="text-[10px] uppercase tracking-[0.3em] text-stone-600 font-bold"></p>
-                    </div>
+    <div id="contact-page" class="fixed inset-0 z-[200] bg-white hidden animate-fade-in overflow-y-auto">
+        <button onclick="closeContactPage()" class="absolute top-10 right-10 text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1">&times; Close</button>
+        <div class="flex flex-col items-center justify-center min-h-screen px-6">
+            <h2 class="serif text-5xl md:text-7xl mb-12 italic text-stone-900">Contact Us</h2>
+            <div class="black-box text-white p-12 md:p-24 w-full max-w-2xl text-center shadow-2xl space-y-16">
+                <div>
+                    <p class="text-stone-500 text-[10px] uppercase tracking-widest mb-4 font-bold">Gmail Address</p>
+                    <a id="c-email" href="" class="text-2xl md:text-3xl font-light hover:text-stone-400 serif"></a>
                 </div>
+                <div class="w-16 h-px bg-stone-800 mx-auto"></div>
+                <div>
+                    <p class="text-stone-500 text-[10px] uppercase tracking-widest mb-4 font-bold">WhatsApp Number</p>
+                    <a id="c-wa" href="" target="_blank" class="text-2xl md:text-3xl font-light hover:text-stone-400 serif"></a>
+                </div>
+                <p id="c-loc" class="text-[10px] uppercase tracking-widest text-stone-600 font-bold pt-10"></p>
             </div>
         </div>
     </div>
 
     <script>
-        function showContactPage() {
-            document.getElementById('contact-page').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeContactPage() {
-            document.getElementById('contact-page').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+        function showContactPage() { document.getElementById('contact-page').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        function closeContactPage() { document.getElementById('contact-page').classList.add('hidden'); document.body.style.overflow = 'auto'; }
 
         fetch('./data.json').then(res => res.json()).then(data => {
-            // Main Branding
+            // Browser Tab Logo (Favicon)
+            if(data.favicon_url) { document.getElementById('dynamic-favicon').href = data.favicon_url; }
+            
             document.getElementById('site-title').innerText = data.brand_name;
             document.getElementById('hero-brand').innerText = data.brand_name;
             document.getElementById('f-brand').innerText = data.brand_name;
             document.getElementById('hero-img').src = data.hero_image;
-
-            // Footer & Details
             document.getElementById('f-tagline').innerText = data.footer_tagline;
             document.getElementById('f-addr1').innerText = data.location.line1;
             document.getElementById('f-addr2').innerText = data.location.line2;
@@ -148,13 +128,12 @@
             document.getElementById('f-sun').innerText = data.hours.sun;
             document.getElementById('f-copy').innerText = data.copyright;
             
-            // Links
             document.getElementById('nav-wa').href = `https://wa.me/${data.whatsapp_number}`;
             document.getElementById('f-insta').href = data.socials.instagram;
             document.getElementById('f-pin').href = data.socials.pinterest;
             document.getElementById('f-fb').href = data.socials.facebook;
 
-            // CONTACT PAGE INJECT
+            // Contact Details
             document.getElementById('c-email').innerText = data.email_address;
             document.getElementById('c-email').href = "mailto:" + data.email_address;
             document.getElementById('c-wa').innerText = "+" + data.whatsapp_number;
@@ -170,10 +149,10 @@
                             <img src="${s.image}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         </div>
                         <div class="flex justify-between items-baseline mb-4">
-                            <h3 class="text-2xl font-bold serif text-stone-900 uppercase tracking-tight">${s.title}</h3>
+                            <h3 class="text-2xl font-bold serif">${s.title}</h3>
                             <span class="font-bold text-sm tracking-widest">RS. ${s.price}</span>
                         </div>
-                        <p class="text-stone-600 text-sm leading-relaxed mb-8">${s.desc}</p>
+                        <p class="text-stone-600 text-sm mb-8 leading-relaxed">${s.desc}</p>
                         <a href="https://wa.me/${data.whatsapp_number}?text=Booking for ${s.title}" class="block text-center border-2 border-stone-900 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white transition">Book via WhatsApp</a>
                     </div>`;
             });
