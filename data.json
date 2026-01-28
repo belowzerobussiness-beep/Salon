@@ -1,0 +1,21 @@
+{
+  "brand_name": "LUMINA",
+  "email_address": "apka-email@gmail.com", 
+  "whatsapp_number": "923000000000",
+  "footer_tagline": "Curated beauty experiences for the modern individual.",
+  "location": {
+    "line1": "1228 Modernist Avenue",
+    "line2": "Design District, CA 90210"
+  },
+  "hours": {
+    "mon_fri": "9:00 - 20:00",
+    "sat": "10:00 - 18:00",
+    "sun": "Closed"
+  },
+  "socials": {
+    "instagram": "#",
+    "pinterest": "#",
+    "facebook": "#"
+  },
+  "copyright": "© 2024 Lumina Salon & Spa. All rights reserved."
+}
