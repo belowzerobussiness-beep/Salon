@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main # Agar aapki branch ka naam 'master' hai toh yahan master likhen
+
+media_folder: "images" # Aapki images is folder mein jayengi
+public_folder: "/images"
+
+collections:
+  - name: "website_data"
+    label: "Website Content"
+    files:
+      - file: "data.json"
+        label: "Main Settings"
+        name: "settings"
+        fields:
+          - { label: "Brand Name", name: "brand_name", widget: "string" }
+          - { label: "Support Gmail", name: "email_address", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp_number", widget: "string" }
+          - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
+          - { label: "Hero Image URL", name: "hero_image", widget: "image" }
+          
+          - label: "Business Hours"
+            name: "hours"
+            widget: "object"
+            fields:
+              - { label: "Mon - Fri", name: "mon_fri", widget: "string" }
+              - { label: "Saturday", name: "sat", widget: "string" }
+              - { label: "Sunday", name: "sun", widget: "string" }
+
+          - label: "Location"
+            name: "location"
+            widget: "object"
+            fields:
+              - { label: "Address Line 1", name: "line1", widget: "string" }
+              - { label: "Address Line 2", name: "line2", widget: "string" }
+
+          - label: "Social Media Links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string" }
+              - { label: "Pinterest", name: "pinterest", widget: "string" }
+              - { label: "Facebook", name: "facebook", widget: "string" }
+
+          - label: "Services Menu"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Service Title", name: "title", widget: "string" }
+              - { label: "Price (Rs.)", name: "price", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Service Image", name: "image", widget: "image" }
+
+          - { label: "Copyright Text", name: "copyright", widget: "string" }
