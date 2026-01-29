@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: belowzerobussiness-beep/Salon # Aapka repository path
   branch: main
+  # Agar aapne OAuth setup kar liya hai, toh site_domain zaruri nahi, 
+  # lekin dalna behtar hai:
+  site_domain: YOUR_VERCEL_APP_URL.vercel.app 
 
 media_folder: "images"
 public_folder: "/images"
