@@ -1,14 +1,14 @@
 backend:
   name: github
-  repo: belowzerobussiness-beep/Salon # Aapka sahi repo path
+  repo: belowzerobussiness-beep/Salon
   branch: main
-  site_domain: salon-two-rosy.vercel.app # Aapka sahi Vercel URL
-  base_url: https://api.netlify.com # Netlify ka OAuth gateway
+  site_domain: salon-two-rosy.vercel.app
+  base_url: https://luminasalon.netlify.app
   auth_endpoint: auth
 
 publish_mode: editorial_workflow
 
-media_folder: "images" # Images yahan save hongi
+media_folder: "images"
 public_folder: "/images"
 
 collections:
