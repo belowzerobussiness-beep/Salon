@@ -1,59 +1,27 @@
 backend:
   name: github
-  repo: belowzerobussiness-beep/Salon # Aapka repository path
+  repo: belowzerobussiness-beep/Salon # Aapka sahi repo path
   branch: main
-  # Agar aapne OAuth setup kar liya hai, toh site_domain zaruri nahi, 
-  # lekin dalna behtar hai:
-  site_domain: YOUR_VERCEL_APP_URL.vercel.app 
+  site_domain: salon-two-rosy.vercel.app # Aapka sahi Vercel URL
+  base_url: https://api.netlify.com # Netlify ka OAuth gateway
+  auth_endpoint: auth
 
-media_folder: "images"
+publish_mode: editorial_workflow
+
+media_folder: "images" # Images yahan save hongi
 public_folder: "/images"
 
 collections:
-  - name: "website_data"
+  - name: "settings"
     label: "Website Content"
     files:
-      - file: "data.json"
-        label: "Main Settings"
-        name: "settings"
+      - label: "General Settings"
+        name: "general"
+        file: "data.json"
         fields:
-          - { label: "Site Favicon (Browser Tab Logo)", name: "favicon_url", widget: "image" }
-          - { label: "Brand Name", name: "brand_name", widget: "string" }
-          - { label: "Support Gmail", name: "email_address", widget: "string" }
-          - { label: "WhatsApp Number", name: "whatsapp_number", widget: "string" }
-          - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
-          - { label: "Hero Image URL", name: "hero_image", widget: "image" }
-          
-          - label: "Business Hours"
-            name: "hours"
-            widget: "object"
-            fields:
-              - { label: "Mon - Fri", name: "mon_fri", widget: "string" }
-              - { label: "Saturday", name: "sat", widget: "string" }
-              - { label: "Sunday", name: "sun", widget: "string" }
-
-          - label: "Location"
-            name: "location"
-            widget: "object"
-            fields:
-              - { label: "Address Line 1", name: "line1", widget: "string" }
-              - { label: "Address Line 2", name: "line2", widget: "string" }
-
-          - label: "Social Media Links"
-            name: "socials"
-            widget: "object"
-            fields:
-              - { label: "Instagram", name: "instagram", widget: "string" }
-              - { label: "Pinterest", name: "pinterest", widget: "string" }
-              - { label: "Facebook", name: "facebook", widget: "string" }
-
-          - label: "Services Menu"
-            name: "services"
-            widget: "list"
-            fields:
-              - { label: "Service Title", name: "title", widget: "string" }
-              - { label: "Price (Rs.)", name: "price", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
-              - { label: "Service Image", name: "image", widget: "image" }
-
-          - { label: "Copyright Text", name: "copyright", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Price List", name: "prices", widget: "list", fields: [
+              { label: "Service Name", name: "service", widget: "string" },
+              { label: "Price", name: "price", widget: "string" }
+            ]}
