@@ -3,8 +3,6 @@ backend:
   repo: belowzerobussiness-beep/Salon
   branch: main
   site_domain: salon-two-rosy.vercel.app
-  base_url: https://luminasalon.netlify.app
-  auth_endpoint: auth
 
 publish_mode: editorial_workflow
 
