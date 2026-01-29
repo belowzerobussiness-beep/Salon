@@ -3,171 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="site-title">LUMINA</title>
-    
-    <link id="dynamic-favicon" rel="icon" type="image/png" href="">
-    
+    <title>Lumina Salon | The Ultimate Beauty Experience</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .serif { font-family: 'Playfair Display', serif; }
-        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .black-box { background-color: #000000; border-radius: 3.5rem; }
+        :root { --gold: #c5a059; --dark: #0f0f0f; --text: #ffffff; --gray: #1e1e1e; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: var(--text); }
+
+        /* Navigation */
+        nav { position: fixed; width: 100%; padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.9); z-index: 2000; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); letter-spacing: 2px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Section */
+        .hero { height: 100vh; background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070'); background-size: cover; background-position: center; display: flex; align-items: center; padding: 0 10%; }
+        .hero-content { max-width: 700px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; line-height: 1.1; margin-bottom: 20px; color: var(--gold); }
+        .hero p { font-size: 1.1rem; margin-bottom: 35px; color: #ccc; max-width: 500px; line-height: 1.8; }
+        .cta-btn { padding: 15px 40px; background: var(--gold); color: black; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.4s; }
+        .cta-btn:hover { background: white; }
+
+        /* Experience Section */
+        .experience { padding: 100px 10%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+        .exp-box i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .exp-box h3 { margin-bottom: 15px; font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+
+        /* Services & Pricing */
+        .services-section { background: white; color: var(--dark); padding: 120px 10%; border-radius: 80px 80px 0 0; }
+        .title-area { text-align: center; margin-bottom: 80px; }
+        .title-area h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
+        .title-area span { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 0.8rem; }
+
+        .price-list-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .price-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .service-info h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
+        .service-info p { font-size: 0.85rem; color: #777; }
+        .price-value { font-size: 1.3rem; font-weight: bold; color: var(--gold); }
+
+        /* Gallery Section */
+        .gallery { padding: 100px 5%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; background: var(--dark); }
+        .gallery img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%); transition: 0.5s; cursor: pointer; }
+        .gallery img:hover { filter: grayscale(0%); transform: scale(1.05); }
+
+        /* Contact Section */
+        .contact { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; background: var(--gray); }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 30px; }
+        .contact-details div { margin-bottom: 20px; font-size: 1.1rem; }
+        .contact-details i { color: var(--gold); margin-right: 15px; }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #333; font-size: 0.9rem; color: #666; }
+        .admin-login { margin-top: 20px; display: inline-block; color: var(--gold); text-decoration: none; }
+
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3.5rem; }
+            .price-list-wrapper, .contact, .experience { grid-template-columns: 1fr; }
+            .gallery { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
-<body class="bg-[#FAF9F6]">
+<body>
 
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-stone-200 py-5 px-6 md:px-10 flex items-center justify-between">
-        <button onclick="window.scrollTo(0,0)" class="text-2xl font-bold tracking-tighter serif">LUMINA</button>
-        <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-600">
-            <a href="#home" class="hover:text-black transition">Home</a>
-            <a href="#services" class="hover:text-black transition">Services</a>
-            <button onclick="showContactPage()" class="hover:text-black transition uppercase">Contact</button>
-        </div>
-        <a id="nav-wa" href="#" target="_blank" class="bg-stone-900 text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Book Now</a>
+    <nav>
+        <div class="logo">LUMINA</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <section id="home" class="relative h-[90vh] flex items-center justify-center overflow-hidden bg-stone-900 mt-16">
-        <img id="hero-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-50 scale-105">
-        <div class="relative z-10 text-center max-w-4xl px-6 animate-fade-in">
-            <span class="text-[10px] uppercase tracking-[0.4em] text-stone-300 mb-6 block font-bold">Premium Care • Elite Results</span>
-            <h1 id="hero-brand" class="text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] text-white serif uppercase tracking-tighter"></h1>
-            <p class="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl mx-auto leading-relaxed font-light italic">Where artistry meets mindfulness.</p>
-            <a href="#services" class="bg-white text-stone-900 px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-stone-100 transition">Explore Services</a>
+    <header class="hero">
+        <div class="hero-content">
+            <p>Welcome to Perfection</p>
+            <h1 id="hero-title">Lumina Salon</h1>
+            <p id="hero-desc">Your beauty journey begins here. We offer world-class grooming and styling tailored just for you.</p>
+            <a href="#services" class="cta-btn">View Price List</a>
+        </div>
+    </header>
+
+    <section class="experience">
+        <div class="exp-box">
+            <i class="fas fa-crown"></i>
+            <h3>Luxury Vibe</h3>
+            <p>Experience royalty in our premium private suites.</p>
+        </div>
+        <div class="exp-box">
+            <i class="fas fa-cut"></i>
+            <h3>Expert Hands</h3>
+            <p>Stylists with over 10 years of international experience.</p>
+        </div>
+        <div class="exp-box">
+            <i class="fas fa-heart"></i>
+            <h3>Organic Care</h3>
+            <p>We use only 100% natural and skin-friendly products.</p>
         </div>
     </section>
 
-    <section id="services" class="py-32 bg-white text-stone-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center md:text-left mb-20">
-                <h2 class="text-5xl md:text-7xl serif mb-6">The Lookbook</h2>
-                <p class="text-stone-600 text-lg max-w-2xl leading-relaxed">Precision haircuts and curated aesthetic treatments designed to enhance your natural profile.</p>
-            </div>
-            <div id="services-list" class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16"></div>
+    <section class="services-section" id="services">
+        <div class="title-area">
+            <span>Premium Menu</span>
+            <h2>Our Pricing</h2>
+        </div>
+        
+        <div class="price-list-wrapper" id="price-container">
+            <p>Loading the menu...</p>
         </div>
     </section>
 
-    <section class="py-32 bg-[#FAF9F6] text-center border-t border-stone-100">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="serif text-5xl mb-8">Get in Touch</h2>
-            <p class="text-stone-500 mb-12 text-sm tracking-wide">Ready to transform? Our team is just a message away.</p>
-            <button onclick="showContactPage()" class="bg-black text-white px-16 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-stone-800 transition shadow-2xl">
-                Open Contact Details
-            </button>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=500" alt="Gallery">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=500" alt="Gallery">
+        <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?q=80&w=500" alt="Gallery">
+        <img src="https://images.unsplash.com/photo-1605497745244-5c3456dd7ed9?q=80&w=500" alt="Gallery">
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <div class="contact-details">
+                <div><i class="fas fa-map-marker-alt"></i> 123 Luxury Street, Beverly Hills, CA</div>
+                <div><i class="fas fa-phone-alt"></i> +1 234 567 890</div>
+                <div><i class="fas fa-envelope"></i> hello@luminasalon.com</div>
+                <div><i class="fas fa-clock"></i> Mon-Sat: 10:00 AM - 08:00 PM</div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <p>Book an appointment or send us a message. We usually respond within 2 hours.</p>
+            <br>
+            <a href="https://wa.me/yournumber" class="cta-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
         </div>
     </section>
 
-    <footer class="bg-black text-white pt-24 pb-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16 border-b border-stone-800 pb-20">
-            <div>
-                <h2 id="f-brand" class="serif text-3xl mb-6"></h2>
-                <p id="f-tagline" class="text-stone-500 text-sm italic"></p>
-            </div>
-            <div>
-                <h4 class="text-[10px] uppercase tracking-widest text-stone-500 mb-8 font-bold">Location</h4>
-                <p id="f-addr1" class="text-stone-300 text-sm"></p>
-                <p id="f-addr2" class="text-stone-300 text-sm"></p>
-            </div>
-            <div>
-                <h4 class="text-[10px] uppercase tracking-widest text-stone-500 mb-8 font-bold">Hours</h4>
-                <div class="text-stone-300 text-sm space-y-2">
-                    <p>Mon-Fri: <span id="f-monfri"></span></p>
-                    <p>Sat: <span id="f-sat"></span></p>
-                    <p>Sun: <span id="f-sun"></span></p>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-[10px] uppercase tracking-widest text-stone-500 mb-8 font-bold">Social</h4>
-                <div class="flex flex-col space-y-2 text-sm italic serif">
-                    <a id="f-insta" href="#">Instagram</a>
-                    <a id="f-pin" href="#">Pinterest</a>
-                    <a id="f-fb" href="#">Facebook</a>
-                </div>
-            </div>
-        </div>
-        <p id="f-copy" class="text-[10px] uppercase tracking-widest text-stone-600 mt-12 text-center"></p>
+    <footer>
+        <p>&copy; 2026 Lumina Salon Elite. Excellence Redefined.</p>
+        <a href="/admin/" class="admin-login">Staff Access</a>
     </footer>
 
-    <div id="contact-page" class="fixed inset-0 z-[200] bg-white hidden animate-fade-in overflow-y-auto">
-        <button onclick="closeContactPage()" class="absolute top-10 right-10 text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1">&times; Close</button>
-        <div class="flex flex-col items-center justify-center min-h-screen px-6">
-            <h2 class="serif text-5xl md:text-7xl mb-12 italic text-stone-900">Contact Us</h2>
-            <div class="black-box text-white p-12 md:p-24 w-full max-w-2xl text-center shadow-2xl space-y-16">
-                <div>
-                    <p class="text-stone-500 text-[10px] uppercase tracking-widest mb-4 font-bold">Gmail Address</p>
-                    <a id="c-email" href="" class="text-2xl md:text-3xl font-light hover:text-stone-400 serif"></a>
-                </div>
-                <div class="w-16 h-px bg-stone-800 mx-auto"></div>
-                <div>
-                    <p class="text-stone-500 text-[10px] uppercase tracking-widest mb-4 font-bold">WhatsApp Number</p>
-                    <a id="c-wa" href="" target="_blank" class="text-2xl md:text-3xl font-light hover:text-stone-400 serif"></a>
-                </div>
-                <p id="c-loc" class="text-[10px] uppercase tracking-widest text-stone-600 font-bold pt-10"></p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Contact Page Functions
-        function showContactPage() { document.getElementById('contact-page').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-        function closeContactPage() { document.getElementById('contact-page').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+        // CMS Data Fetching
+        fetch('/data.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('hero-title').innerText = data.title;
+                document.getElementById('hero-desc').innerText = data.description;
 
-        // Data Fetching
-        fetch('./data.json').then(res => res.json()).then(data => {
-            if(data.favicon_url) { document.getElementById('dynamic-favicon').href = data.favicon_url; }
-            document.getElementById('site-title').innerText = data.brand_name;
-            document.getElementById('hero-brand').innerText = data.brand_name;
-            document.getElementById('f-brand').innerText = data.brand_name;
-            document.getElementById('hero-img').src = data.hero_image;
-            document.getElementById('f-tagline').innerText = data.footer_tagline;
-            document.getElementById('f-addr1').innerText = data.location.line1;
-            document.getElementById('f-addr2').innerText = data.location.line2;
-            document.getElementById('f-monfri').innerText = data.hours.mon_fri;
-            document.getElementById('f-sat').innerText = data.hours.sat;
-            document.getElementById('f-sun').innerText = data.hours.sun;
-            document.getElementById('f-copy').innerText = data.copyright;
-            document.getElementById('nav-wa').href = `https://wa.me/${data.whatsapp_number}`;
-            document.getElementById('f-insta').href = data.socials.instagram;
-            document.getElementById('f-pin').href = data.socials.pinterest;
-            document.getElementById('f-fb').href = data.socials.facebook;
-            document.getElementById('c-email').innerText = data.email_address;
-            document.getElementById('c-email').href = "mailto:" + data.email_address;
-            document.getElementById('c-wa').innerText = "+" + data.whatsapp_number;
-            document.getElementById('c-wa').href = "https://wa.me/" + data.whatsapp_number;
-            document.getElementById('c-loc').innerText = data.location.line1 + ", " + data.location.line2;
+                const container = document.getElementById('price-container');
+                container.innerHTML = '';
 
-            const grid = document.getElementById('services-list');
-            data.services.forEach(s => {
-                grid.innerHTML += `
-                    <div class="group">
-                        <div class="aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 bg-stone-100">
-                            <img src="${s.image}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                data.prices.forEach(item => {
+                    const html = `
+                        <div class="price-item">
+                            <div class="service-info">
+                                <h4>${item.service}</h4>
+                                <p>Standard professional treatment</p>
+                            </div>
+                            <div class="price-value">${item.price}</div>
                         </div>
-                        <div class="flex justify-between items-baseline mb-4">
-                            <h3 class="text-2xl font-bold serif">${s.title}</h3>
-                            <span class="font-bold text-sm tracking-widest">RS. ${s.price}</span>
-                        </div>
-                        <p class="text-stone-600 text-sm mb-8 leading-relaxed">${s.desc}</p>
-                        <a href="https://wa.me/${data.whatsapp_number}?text=Booking for ${s.title}" class="block text-center border-2 border-stone-900 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white transition">Book via WhatsApp</a>
-                    </div>`;
-            });
-        });
-
-        // Netlify Identity Login Logic
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
+                    `;
+                    container.innerHTML += html;
+                });
+            })
+            .catch(err => console.error("CMS Data Error:", err));
     </script>
 </body>
 </html>
