@@ -1,21 +1,49 @@
 {
   "brand_name": "LUMINA",
-  "email_address": "apka-email@gmail.com", 
-  "whatsapp_number": "923000000000",
-  "footer_tagline": "Curated beauty experiences for the modern individual.",
-  "location": {
-    "line1": "1228 Modernist Avenue",
-    "line2": "Design District, CA 90210"
+  "favicon_url": "/images/favicon.png.png",
+  "socials": {
+    "instagram": "#faysalsario._",
+    "pinterest": "#faysalsario._",
+    "facebook": "#faysalsario._"
   },
+  "copyright": "© 2026 Lumina Salon & Spa. All rights reserved",
+  "footer_tagline": "Curated beauty experiences for the modern individual.",
   "hours": {
     "mon_fri": "9:00 - 20:00",
     "sat": "10:00 - 18:00",
     "sun": "Closed"
   },
-  "socials": {
-    "instagram": "#",
-    "pinterest": "#",
-    "facebook": "#"
+  "email_address": "belowzero.bussiness@gmail.com",
+  "location": {
+    "line1": "kamra mrf",
+    "line2": "Design District, attock"
   },
-  "copyright": "© 2024 Lumina Salon & Spa. All rights reserved."
+  "hero_image": "/images/Gemini_Generated_Image_g3k9v1g3k9v1g3k9.png",
+  "whatsapp_number": "923155075322",
+  "services": [
+    {
+      "image": "/images/low-taper-fade-hairstyle-boy.webp",
+      "title": "Low Taper Fade",
+      "desc": "A Low Taper Fade blends short sides into fuller length on top, creating a clean, fresh shape that boosts natural texture. The taper fade sits low around the ears, making the thick, wavy fringe stand out with soft movement and easy volume. Blow-drying while lifting the front adds height, and a small amount of Texture Clay helps define the waves while keeping the style flexible and lightweight.",
+      "price": "200"
+    },
+    {
+      "image": "/images/crew-cut-hairstyle.webp",
+      "title": "Crew Cut",
+      "desc": "Crew Cut features short, even hair on top with a tight, clean fade on the sides and back. The top is slightly textured, giving it a natural, lifted look without needing long hair. The shape keeps the hairline sharp and makes the style easy to manage every day. Blow-dry the top forward, then use a small amount of Texture Clay to define the texture and keep everything in place.",
+      "price": "200"
+    },
+    {
+      "image": "/images/taper-fade-haircut-boy.webp",
+      "title": "Taper Fade",
+      "desc": "A Taper Fade delivers a modern look by gradually shortening the hair from the top down to the neckline. The top stays longer for light movement, while the sides and back fade smoothly into the skin for a sharp outline. This shape adds freshness without losing softness. Blow-dry the top for lift, then use a small amount of Molding Paste to control the texture and keep the style looking natural.",
+      "price": "200"
+    },
+    {
+      "image": "/images/curtain-bangs-hairstyle-boy.webp",
+      "title": "Curtain Bangs",
+      "desc": "Curtain Bangs use a clean middle part and long front pieces that fall to each side like “curtains,” creating a soft frame around the face. The top hair stays longer, while the sides blend smoothly for a natural flow. Blow-dry the front backward with your fingers to build gentle volume, then use Styling Cream to keep the bangs light, smooth, and easy to shape.",
+      "price": "200"
+    }
+  ]
 }
