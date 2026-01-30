@@ -1,10 +1,33 @@
 {
-  "title": "Lumina Salon",
-  "description": "Premium Beauty Services",
+  "logo": "LUMINA",
+  "brand_name": "Lumina Salon Elite",
+  "hero_image": "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070",
+  "hero_desc": "Your beauty journey begins here. We offer world-class grooming and styling tailored just for you.",
+  "experience": {
+    "exp1_t": "Luxury Vibe",
+    "exp1_d": "Experience royalty in our premium private suites.",
+    "exp2_t": "Expert Hands",
+    "exp2_d": "Stylists with over 10 years of international experience.",
+    "exp3_t": "Organic Care",
+    "exp3_d": "We use only 100% natural and skin-friendly products."
+  },
   "prices": [
     {
-      "service": "Hair Cut",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=500",
+      "service": "Classic Haircut",
+      "desc": "Professional style and finish",
       "price": "$50"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=500",
+      "service": "Beard Trim",
+      "desc": "Precision grooming with hot towel",
+      "price": "$30"
     }
-  ]
+  ],
+  "contact": {
+    "whatsapp": "923001234567",
+    "email": "hello@luminasalon.com",
+    "footer": "© 2026 Lumina Salon Elite. Excellence Redefined."
+  }
 }
