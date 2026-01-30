@@ -1,29 +1,50 @@
 backend:
   name: github
-  repo: belowzerobussiness-beep/Salon
+  repo: your-username/your-repo-name # <--- Apna username/repo likhein
   branch: main
-  site_domain: salon-two-rosy.vercel.app
   base_url: https://salon-two-rosy.vercel.app
   auth_endpoint: api/auth
 
-publish_mode: editorial_workflow
-
-# Media settings
-media_folder: "images"
+media_folder: "public/images"
 public_folder: "/images"
 
-# Collections settings
 collections:
   - name: "settings"
-    label: "Website Content"
+    label: "Website Settings"
     files:
-      - label: "General Settings"
-        name: "general"
-        file: "data.json"
+      - file: "data.json"
+        label: "Main Content"
+        name: "content"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Price List", name: "prices", widget: "list", fields: [
-              { label: "Service Name", name: "service", widget: "string" },
-              { label: "Price", name: "price", widget: "string" }
-            ]}
+          - { label: "Logo Text", name: "logo", widget: "string" }
+          - { label: "Brand Name", name: "brand_name", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Hero Description", name: "hero_desc", widget: "text" }
+          
+          - label: "Experience Section"
+            name: "experience"
+            widget: "object"
+            fields:
+              - { label: "Box 1 Title", name: "exp1_t", widget: "string" }
+              - { label: "Box 1 Desc", name: "exp1_d", widget: "text" }
+              - { label: "Box 2 Title", name: "exp2_t", widget: "string" }
+              - { label: "Box 2 Desc", name: "exp2_d", widget: "text" }
+              - { label: "Box 3 Title", name: "exp3_t", widget: "string" }
+              - { label: "Box 3 Desc", name: "exp3_d", widget: "text" }
+
+          - label: "Pricing & Haircuts"
+            name: "prices"
+            widget: "list"
+            fields:
+              - { label: "Service Image", name: "image", widget: "image" }
+              - { label: "Service Name", name: "service", widget: "string" }
+              - { label: "Description", name: "desc", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
+              - { label: "Email Address", name: "email", widget: "string" }
+              - { label: "Footer Text", name: "footer", widget: "string" }
