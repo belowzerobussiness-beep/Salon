@@ -46,6 +46,7 @@ collections:
             name: "contact"
             widget: "object"
             fields:
+              - { label: "Address", name: "address", widget: "string" }
               - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
               - { label: "Email Address", name: "email", widget: "string" }
-              - { label: "Footer Text", name: "footer", widget: "string" }
+              - { label: "Footer Copyright Text", name: "footer", widget: "string" }
