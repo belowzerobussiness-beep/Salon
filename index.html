@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumina Salon | The Ultimate Beauty Experience</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -24,7 +23,7 @@
         .hero-content { max-width: 700px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; line-height: 1.1; margin-bottom: 20px; color: var(--gold); }
         .hero p { font-size: 1.1rem; margin-bottom: 35px; color: #ccc; max-width: 500px; line-height: 1.8; }
-        .cta-btn { padding: 15px 40px; background: var(--gold); color: black; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.4s; }
+        .cta-btn { padding: 15px 40px; background: var(--gold); color: black; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.4s; cursor: pointer; border: none; display: inline-block; }
         .cta-btn:hover { background: white; }
 
         /* Experience Section */
@@ -37,31 +36,32 @@
         .title-area { text-align: center; margin-bottom: 80px; }
         .title-area h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
         .title-area span { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 0.8rem; }
-
         .price-list-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .price-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .service-info h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
-        .service-info p { font-size: 0.85rem; color: #777; }
         .price-value { font-size: 1.3rem; font-weight: bold; color: var(--gold); }
 
-        /* Gallery Section */
-        .gallery { padding: 100px 5%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; background: var(--dark); }
-        .gallery img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%); transition: 0.5s; cursor: pointer; }
-        .gallery img:hover { filter: grayscale(0%); transform: scale(1.05); }
-
-        /* Contact Section */
-        .contact { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; background: var(--gray); }
-        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 30px; }
-        .contact-details div { margin-bottom: 20px; font-size: 1.1rem; }
-        .contact-details i { color: var(--gold); margin-right: 15px; }
+        /* Contact Modal (New Page Style) */
+        #contact-modal { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070');
+            background-size: cover; background-position: center; z-index: 3000; align-items: center; justify-content: center;
+        }
+        .contact-box { 
+            background: rgba(15, 15, 15, 0.95); padding: 60px; border: 1px solid var(--gold); 
+            text-align: center; max-width: 500px; width: 90%; border-radius: 10px; position: relative;
+        }
+        .close-modal { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; }
+        .contact-box h2 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2.5rem; margin-bottom: 30px; }
+        .contact-item { margin: 25px 0; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 15px; }
+        .contact-item i { color: var(--gold); font-size: 1.5rem; }
+        .contact-item a { color: white; text-decoration: none; transition: 0.3s; }
+        .contact-item a:hover { color: var(--gold); }
 
         footer { padding: 50px; text-align: center; border-top: 1px solid #333; font-size: 0.9rem; color: #666; }
-        .admin-login { margin-top: 20px; display: inline-block; color: var(--gold); text-decoration: none; }
-
+        
         @media (max-width: 992px) {
             .hero h1 { font-size: 3.5rem; }
-            .price-list-wrapper, .contact, .experience { grid-template-columns: 1fr; }
-            .gallery { grid-template-columns: 1fr 1fr; }
+            .price-list-wrapper, .experience { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -72,8 +72,7 @@
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0)" onclick="openContact()">Contact</a></li>
         </ul>
     </nav>
 
@@ -87,85 +86,68 @@
     </header>
 
     <section class="experience">
-        <div class="exp-box">
-            <i class="fas fa-crown"></i>
-            <h3>Luxury Vibe</h3>
-            <p>Experience royalty in our premium private suites.</p>
-        </div>
-        <div class="exp-box">
-            <i class="fas fa-cut"></i>
-            <h3>Expert Hands</h3>
-            <p>Stylists with over 10 years of international experience.</p>
-        </div>
-        <div class="exp-box">
-            <i class="fas fa-heart"></i>
-            <h3>Organic Care</h3>
-            <p>We use only 100% natural and skin-friendly products.</p>
-        </div>
+        <div class="exp-box"><i class="fas fa-crown"></i><h3>Luxury Vibe</h3><p>Experience royalty in our premium private suites.</p></div>
+        <div class="exp-box"><i class="fas fa-cut"></i><h3>Expert Hands</h3><p>Stylists with over 10 years of experience.</p></div>
+        <div class="exp-box"><i class="fas fa-heart"></i><h3>Organic Care</h3><p>We use 100% natural and skin-friendly products.</p></div>
     </section>
 
     <section class="services-section" id="services">
-        <div class="title-area">
-            <span>Premium Menu</span>
-            <h2>Our Pricing</h2>
-        </div>
-        
-        <div class="price-list-wrapper" id="price-container">
-            <p>Loading the menu...</p>
+        <div class="title-area"><span>Premium Menu</span><h2>Our Pricing</h2></div>
+        <div class="price-list-wrapper" id="price-container"><p>Loading the menu...</p></div>
+        <div style="text-align: center; margin-top: 50px;">
+            <button onclick="openContact()" class="cta-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
         </div>
     </section>
 
-    <section class="gallery">
-        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=500" alt="Gallery">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=500" alt="Gallery">
-        <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?q=80&w=500" alt="Gallery">
-        <img src="https://images.unsplash.com/photo-1605497745244-5c3456dd7ed9?q=80&w=500" alt="Gallery">
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="contact-info">
-            <h2>Get In Touch</h2>
-            <div class="contact-details">
-                <div><i class="fas fa-map-marker-alt"></i> 123 Luxury Street, Beverly Hills, CA</div>
-                <div><i class="fas fa-phone-alt"></i> +1 234 567 890</div>
-                <div><i class="fas fa-envelope"></i> hello@luminasalon.com</div>
-                <div><i class="fas fa-clock"></i> Mon-Sat: 10:00 AM - 08:00 PM</div>
+    <div id="contact-modal">
+        <span class="close-modal" onclick="closeContact()">&times;</span>
+        <div class="contact-box">
+            <h2>Contact Us</h2>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/923001234567" target="_blank">+92 300 1234567</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:hello@luminasalon.com">hello@luminasalon.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>021-3456789</span>
             </div>
         </div>
-        <div class="contact-form">
-            <p>Book an appointment or send us a message. We usually respond within 2 hours.</p>
-            <br>
-            <a href="https://wa.me/yournumber" class="cta-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-        </div>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2026 Lumina Salon Elite. Excellence Redefined.</p>
-        <a href="/admin/" class="admin-login">Staff Access</a>
+        <a href="/admin/" style="color: var(--gold); text-decoration: none; margin-top: 10px; display: inline-block;">Staff Access</a>
     </footer>
 
     <script>
+        // Modal Logic
+        function openContact() { document.getElementById('contact-modal').style.display = 'flex'; }
+        function closeContact() { document.getElementById('contact-modal').style.display = 'none'; }
+
+        // Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            let modal = document.getElementById('contact-modal');
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+
         // CMS Data Fetching
         fetch('/data.json')
             .then(res => res.json())
             .then(data => {
                 document.getElementById('hero-title').innerText = data.title;
                 document.getElementById('hero-desc').innerText = data.description;
-
                 const container = document.getElementById('price-container');
                 container.innerHTML = '';
-
                 data.prices.forEach(item => {
-                    const html = `
+                    container.innerHTML += `
                         <div class="price-item">
-                            <div class="service-info">
-                                <h4>${item.service}</h4>
-                                <p>Standard professional treatment</p>
-                            </div>
+                            <div class="service-info"><h4>${item.service}</h4><p>Professional treatment</p></div>
                             <div class="price-value">${item.price}</div>
-                        </div>
-                    `;
-                    container.innerHTML += html;
+                        </div>`;
                 });
             })
             .catch(err => console.error("CMS Data Error:", err));
