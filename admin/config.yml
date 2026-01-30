@@ -2,7 +2,7 @@ backend:
   name: github
   repo: belowzero00/Salon
   branch: main
-  base_url: https://salon-two-rosy.vercel.app
+  base_url: https://below-zero.vercel.app
   auth_endpoint: api/auth
 
 media_folder: "public/images"
