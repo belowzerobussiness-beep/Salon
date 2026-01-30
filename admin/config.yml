@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: belowzero00/Salon
+  repo: belowzerobussiness-beep/Salon
   branch: main
   base_url: https://salon-two-rosy.vercel.app
   auth_endpoint: api/auth
