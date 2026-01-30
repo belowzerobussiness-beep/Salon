@@ -16,7 +16,8 @@ collections:
         label: "Main Content"
         name: "content"
         fields:
-          - { label: "Logo Text", name: "logo", widget: "string" }
+          - { label: "Logo Image", name: "logo_img", widget: "image", required: false }
+          - { label: "Logo Text (If no image)", name: "logo", widget: "string" }
           - { label: "Brand Name", name: "brand_name", widget: "string" }
           - { label: "Hero Image", name: "hero_image", widget: "image" }
           - { label: "Hero Description", name: "hero_desc", widget: "text" }
