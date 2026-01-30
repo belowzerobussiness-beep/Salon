@@ -3,13 +3,16 @@ backend:
   repo: belowzerobussiness-beep/Salon
   branch: main
   site_domain: salon-two-rosy.vercel.app
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  base_url: https://salon-two-rosy.vercel.app
+  auth_endpoint: api/auth
 
 publish_mode: editorial_workflow
+
+# Media settings
 media_folder: "images"
 public_folder: "/images"
 
+# Collections settings
 collections:
   - name: "settings"
     label: "Website Content"
