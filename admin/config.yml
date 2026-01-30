@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-username/your-repo-name # <--- Apna username/repo likhein
+  repo: belowzero00/Salon
   branch: main
   base_url: https://salon-two-rosy.vercel.app
   auth_endpoint: api/auth
